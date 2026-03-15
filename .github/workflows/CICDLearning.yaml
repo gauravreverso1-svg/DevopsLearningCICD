@@ -1,8 +1,8 @@
 name: CICDLearning
 
 on:
-  pull_request:
-    branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
   push:
     branches: ["microservice/claims"]
 
@@ -30,12 +30,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
+        if: ${{ hashFiles('**/*.py') != '' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: "pip"
 
       - name: Install dependencies
+        if: ${{ hashFiles('**/*.py') != '' }}
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
