@@ -3,6 +3,7 @@ provider "aws" {
   region = "ap-south-1"
 }
 
+#below is bucket
 variable "bucket_name" {
   description = "S3 bucket name"
 }
