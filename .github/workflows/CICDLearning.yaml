@@ -66,10 +66,10 @@ jobs:
         with:
           context: .
           load: true  # Requires a builder (Buildx) to load into local store
-          tags: ${{ env.BRANCH_NAME }}
+          tags: ${{ env.IMAGE_NAME }}
 
       - name: Push Docker image
-        run: docker push ${{ vars.DOCKERHUB_USERNAME }}/reverso:${{ env.BRANCH_NAME }}
+        run: docker push ${{ vars.DOCKERHUB_USERNAME }}/reverso:${{ env.IMAGE_NAME }}
 
       # - name: Extract Docker metadata (tags & labels)
       #   id: meta
