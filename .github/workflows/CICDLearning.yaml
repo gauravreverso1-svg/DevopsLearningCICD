@@ -66,7 +66,7 @@ jobs:
         with:
           context: .
           load: true  # Requires a builder (Buildx) to load into local store
-          tags: ${{ env.IMAGE_NAME }}
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/reverso:${{ env.IMAGE_NAME }}
 
       - name: Push Docker image
         run: docker push ${{ vars.DOCKERHUB_USERNAME }}/reverso:${{ env.IMAGE_NAME }}
