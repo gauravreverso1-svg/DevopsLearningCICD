@@ -1,8 +1,8 @@
 name: CICDLearning
 
-on:
-  pull_request:
-    branches: ["main"]
+# on:
+#   pull_request:
+#     branches: ["main"]
   push:
     branches: ["microservice/claims"]
 
