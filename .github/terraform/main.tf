@@ -1,6 +1,7 @@
 provider "aws" {
   region = "ap-south-1"
 }
+#jobdonebyastha
 
 variable "bucket_name" {
   description = "S3 bucket name"
